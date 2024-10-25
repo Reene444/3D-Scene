@@ -1,13 +1,43 @@
-// src/My3DScene.js
-import React from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Text } from '@react-three/drei';
+// src/Cube.js
+import React, { useRef, useEffect } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { Text } from '@react-three/drei';
 
 const RotatingBox = () => {
-    const ref = React.useRef();
+    const ref = useRef();
+    const position = useRef([0, 0, 0]); // 存储立方体位置
+
     useFrame(() => {
         ref.current.rotation.y += 0.01; // 每帧旋转
+        ref.current.position.set(...position.current); // 更新立方体位置
     });
+
+    const handleKeyDown = (event) => {
+        const speed = 0.1; // 控制移动速度
+        switch (event.key) {
+            case 'ArrowUp':
+                position.current[2] -= speed; // 前移
+                break;
+            case 'ArrowDown':
+                position.current[2] += speed; // 后移
+                break;
+            case 'ArrowLeft':
+                position.current[0] -= speed; // 左移
+                break;
+            case 'ArrowRight':
+                position.current[0] += speed; // 右移
+                break;
+            default:
+                break;
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
 
     // 顶点着色器
     const vertexShader = `
@@ -49,24 +79,17 @@ const RotatingBox = () => {
                 Interest: Hackathons
             </Text>
             <Text position={[0, 1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[Math.PI / 2, 0, 0]} maxWidth={1.8}>
-                Advanced Computer Science
+                Advanced Computer Science (UoB)
             </Text>
             <Text position={[0, -1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[-Math.PI / 2, 0, 0]} maxWidth={1.8}>
-                Bottom
+                Tech
             </Text>
         </mesh>
     );
 };
 
-const My3DScene = () => {
-    return (
-        <Canvas style={{ height: '100vh' }}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
-            <OrbitControls />
-            <RotatingBox />
-        </Canvas>
-    );
+const Cube = () => {
+    return <RotatingBox />;
 };
 
-export default My3DScene;
+export default Cube;
