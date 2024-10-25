@@ -2,7 +2,6 @@
 import React from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
-import * as THREE from 'three';
 
 const RotatingBox = () => {
     const ref = React.useRef();
@@ -33,15 +32,28 @@ const RotatingBox = () => {
 
     return (
         <mesh ref={ref} position={[0, 0, 0]}>
-            <boxGeometry args={[1, 1, 1]} />
+            <boxGeometry args={[2, 2, 2]} />
             <shaderMaterial vertexShader={vertexShader} fragmentShader={fragmentShader} />
+
             {/* 添加文本到立方体的每个面 */}
-            <Text position={[0, 0, 0.51]} fontSize={0.1} color="black" anchorX="center" anchorY="middle">Front</Text>
-            <Text position={[0, 0, -0.51]} fontSize={0.1} color="black" anchorX="center" anchorY="middle">Back</Text>
-            <Text position={[0.51, 0, 0]} fontSize={0.1} color="black" anchorX="center" anchorY="middle">Right</Text>
-            <Text position={[-0.51, 0, 0]} fontSize={0.1} color="black" anchorX="center" anchorY="middle">Left</Text>
-            <Text position={[0, 0.51, 0]} fontSize={0.1} color="black" anchorX="center" anchorY="middle">Top</Text>
-            <Text position={[0, -0.51, 0]} fontSize={0.1} color="black" anchorX="center" anchorY="middle">Bottom</Text>
+            <Text position={[0, 0, 1.01]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" maxWidth={1.8}>
+                Linlin Chen
+            </Text>
+            <Text position={[0, 0, -1.01]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, Math.PI, 0]} maxWidth={1.8}>
+                Full Stack Developer
+            </Text>
+            <Text position={[1.01, 0, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, Math.PI / 2, 0]} maxWidth={1.8}>
+                University of Birmingham (UoB)
+            </Text>
+            <Text position={[-1.01, 0, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, -Math.PI / 2, 0]} maxWidth={1.8}>
+                Interest: Hackathons
+            </Text>
+            <Text position={[0, 1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[Math.PI / 2, 0, 0]} maxWidth={1.8}>
+                Advanced Computer Science
+            </Text>
+            <Text position={[0, -1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[-Math.PI / 2, 0, 0]} maxWidth={1.8}>
+                Bottom
+            </Text>
         </mesh>
     );
 };
