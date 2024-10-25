@@ -67,19 +67,19 @@ const RotatingBox = () => {
 
             {/* 添加文本到立方体的每个面 */}
             <Text position={[0, 0, 1.01]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" maxWidth={1.8}>
-                text
+                Linlin Chen
             </Text>
             <Text position={[0, 0, -1.01]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, Math.PI, 0]} maxWidth={1.8}>
-                text
+                Full Stack Developer
             </Text>
             <Text position={[1.01, 0, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, Math.PI / 2, 0]} maxWidth={1.8}>
-                text
+                University of Birmingham (UoB)
             </Text>
             <Text position={[-1.01, 0, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, -Math.PI / 2, 0]} maxWidth={1.8}>
-                text
+                Interest: Hackathons
             </Text>
             <Text position={[0, 1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[Math.PI / 2, 0, 0]} maxWidth={1.8}>
-                text
+                Advanced Computer Science (UoB)
             </Text>
             <Text position={[0, -1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[-Math.PI / 2, 0, 0]} maxWidth={1.8}>
                 Tech
