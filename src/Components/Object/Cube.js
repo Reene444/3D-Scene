@@ -67,19 +67,19 @@ const RotatingBox = () => {
 
       {/* 添加文本到立方体的每个面 */}
       <Text position={[0, 0, 1.01]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" maxWidth={1.8}>
-        Linlin Chen
+        {/*Linlin Chen*/} 1
       </Text>
       <Text position={[0, 0, -1.01]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, Math.PI, 0]} maxWidth={1.8}>
-        Full Stack Developer
+        {/*Full Stack Developer*/}2
       </Text>
       <Text position={[1.01, 0, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, Math.PI / 2, 0]} maxWidth={1.8}>
-        University of Birmingham (UoB)
+        {/*University of Birmingham (UoB)*/}3
       </Text>
       <Text position={[-1.01, 0, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[0, -Math.PI / 2, 0]} maxWidth={1.8}>
-        Interest: Hackathons
+        {/*Interest: Hackathons*/}4
       </Text>
       <Text position={[0, 1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[Math.PI / 2, 0, 0]} maxWidth={1.8}>
-        Advanced Computer Science (UoB)
+        {/*Advanced Computer Science (UoB)*/}5
       </Text>
       <Text position={[0, -1.01, 0]} fontSize={0.2} color="black" anchorX="center" anchorY="middle" rotation={[-Math.PI / 2, 0, 0]} maxWidth={1.8}>
         Tech
