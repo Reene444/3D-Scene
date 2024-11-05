@@ -74,7 +74,7 @@ export const Galaxy = () => {
       return;
     }
 
-    // 在这里创建节点
+   
     sunNode = new Node();
     sunNode.drawInfo = {
       uniforms: {
