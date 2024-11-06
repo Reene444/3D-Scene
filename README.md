@@ -3,7 +3,7 @@
 - WebGL2
 - React.js
 - jdoc
-- jtest
+- jest
 
 ### Demo
 
