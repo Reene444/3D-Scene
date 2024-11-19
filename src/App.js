@@ -21,7 +21,7 @@ function Loader() {
 
 // 模型加载和显示
 const Model = () => {
-  const gltf = useLoader(GLTFLoader, "/demo2.glb"); // 修改成你自己的GLB路径
+  const gltf = useLoader(GLTFLoader, "/bomb.gltf"); // 修改成你自己的GLB路径
   return <primitive object={gltf.scene} scale={0.315} position={[0, -0.55, 0]} />;
 
   // const { scene } = useGLTF('/models/sci_fi_hallway_free/scene.gltf');
